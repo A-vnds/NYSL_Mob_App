@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northside Youth Soccer League</title>
+    <link rel="shortcut icon" href="img/football.ico">
+    <link rel="stylesheet" href="bootstrap-4.1.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fixed.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+    <div id="vue-app">
+
+        <!--- Start Nav Page -->
+        <div id="home">
+
+            <nav class="navbar navbar-expand-md fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html" v-on:click="showPage('home')"><img src="img/Header_Logo.png" alt="NYSL"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home" v-on:click="showPage('home')">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#teams" v-on:click="showPage('teams')">Teams</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#schedule" v-on:click="showPage('schedule')">Schedule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#locations" v-on:click="showPage('locations')">Locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#scoreboard" v-on:click="showPage('scoreboard')">Scoreboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chat" v-on:click="showPage('chat'); checkLogin();">Chat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div v-if="page == 'home'">
+                <div class="landing">
+                    <div class="home-wrap">
+                        <div class="home-inner">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="caption center-block text-center">
+                    <h3>Northside Youth Soccer League</h3>
+                    <a href="#teams" v-on:click="showPage('teams')"><img src="pictures/team-bench.png"></a>
+                    <a href="#schedule" v-on:click="showPage('schedule')"><img src="pictures/calendar.png"></a><br>
+                    <a href="#locations" v-on:click="showPage('locations')"><img src="pictures/map.png"></a>
+                    <a href="#chat" v-on:click="showPage('chat'); checkLogin();"><img src="pictures/chat.png"></a>
+                </div>
+            </div>
+        </div>
+        <!--- End Nav/Landing Page -->
+
+        <!--- Start Teams Section -->
+        <div id="teams" class="offset" v-if="page == 'teams'">
+            <div class="offset_1pg"> </div>
+            <div class="jumbotron">
+
+                <h3 class="heading">Teams</h3>
+                <div class="heading-underline"></div>
+
+                <div class="row narrow teams-section">
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U1.png">
+                            <div class="card-body">
+                                <h3>U1</h3>
+                                <p>Wins: {{teams.U1.wins}} Loses: {{teams.U1.loses}}</p>
+                                <p>Ties: {{teams.U1.ties}}</p>
+                                <p>Score: {{teams.U1.score}} </p>
+
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU1">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U1: 24 W. Walton St., Chicago, IL 60610</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654213562159!2d-87.63124374915907!3d41.9002930791185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+USA!5e0!3m2!1sen!2snl!4v1539857512979" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U2.png">
+                            <div class="card-body">
+                                <h3>U2</h3>
+                                <p>Wins: {{teams.U2.wins}} Loses: {{teams.U2.loses}}</p>
+                                <p>Ties: {{teams.U2.ties}}</p>
+                                <p>Score: {{teams.U2.score}} </p>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU2">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U2: 1734 N. Orleans St., Chicago, IL 60614</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258285528253!2d-87.64003404915863!3d41.913803479117306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858116679" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U3.png">
+                            <div class="card-body">
+                                <h3>U3</h3>
+                                <p>Wins: {{teams.U3.wins}} Loses: {{teams.U3.loses}}</p>
+                                <p>Ties: {{teams.U3.ties}}</p>
+                                <p>Score: {{teams.U3.score}} </p>
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU3">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U3: 2245 N. Southport Ave., Chicago, IL 60614</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830903626!2d-87.66511994915827!3d41.92326457911668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858149152" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U4.png">
+                            <div class="card-body">
+                                <h3>U4</h3>
+                                <p>Wins: {{teams.U4.wins}} Loses: {{teams.U4.loses}}</p>
+                                <p>Ties: {{teams.U4.ties}}</p>
+                                <p>Score: {{teams.U4.score}} </p>
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU4">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U4: 2625 N. Orchard St., Chicago, IL 60614</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.291821600013!2d-87.64809034915805!3d41.929580279116124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858203584" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U5.png">
+                            <div class="card-body">
+                                <h3>U5</h3>
+                                <p>Wins: {{teams.U5.wins}} Loses: {{teams.U5.loses}}</p>
+                                <p>Ties: {{teams.U5.ties}}</p>
+                                <p>Score: {{teams.U5.score}} </p>
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU5">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U5: 1409 N. Ogden Ave., Chicago, IL 60610</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3364882363303!2d-87.64836124915884!3d41.90712467911788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+USA!5e0!3m2!1sen!2snl!4v1539858228771" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card about text-center">
+                            <img src="pictures/U6.png">
+                            <div class="card-body">
+                                <h3>U6</h3>
+                                <p>Wins: {{teams.U6.wins}} Loses: {{teams.U6.loses}}</p>
+                                <p>Ties: {{teams.U6.ties}}</p>
+                                <p>Score: {{teams.U6.score}} </p>
+
+
+
+                                <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#locationU6">
+                                    Home Location
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="locationU6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="exampleModalLongTitle">U6: 2101 N. Fremont St., Chicago, IL 60614</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.748020313892!2d-87.65356324915841!3d41.91977527911686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858259828" frameborder="0" allowfullscreen="allowfullscreen" class="card-img-top" style="border: 0px;"></iframe>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-dark btn-sm" v-on:click="showPage('scoreboard')">Scoreboard</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--- End Teams Section -->
+
+        <!--- Start Schedule Section -->
+        <div id="schedule" class="offset" v-if="page == 'schedule'">
+            <div class="offset_1pg"> </div>
+            <div class="container-fluid padding">
+
+
+                <h3 class="heading"><button v-on:click="resetSchedule">Schedule</button></h3>
+                <div class="heading-underline"></div>
+
+                <div class="row narrow justify-content-center filter-schedule">
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U1')">U1</button>
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U2')">U2</button>
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U3')">U3</button>
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U4')">U4</button>
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U5')">U5</button>
+                    <button type="button" class="btn btn-dark" v-on:click="filterSchedule('U6')">U6</button>
+                </div>
+
+
+                <div class="row narrow">
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" v-for="game in schedule">
+                        <div class="card text-center">
+                            <div class="row">
+                                <div class="col-6"><img class="card-img-top" v-bind:src="teams[game.host].icon" alt="Team Logo"></div>
+                                <div class="col-6"><img class="card-img-top" v-bind:src="teams[game.guest].icon" alt="Team Logo"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4>{{game.host}} vs {{game.guest}}</h4>
+                                <h5>{{game.date}} {{game.month}}</h5>
+                                <h5>{{game.location}}</h5>
+                                <h5>{{game.time}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--- End Schedule Section -->
+
+
+        <!--- Start Locations Section -->
+        <div id="locations" class="offset" v-if="page == 'locations'">
+            <div class="offset_1pg"> </div>
+
+            <div class="jumbotron">
+
+                <h3 class="heading">Locations</h3>
+                <div class="heading-underline"></div>
+
+                <div class="row narrow">
+
+                    <div class="col-lg-12 locations" v-for="(map,value) in maps">
+                        <div class="card text-center">
+                            <button class="btn btn-dark" @click="displayMap(value)">{{map.name}}</button>
+                            <div v-if="mapDisplayed === value">
+                                <iframe class="card-img-top" v-bind:src="map.maps_url" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <p>{{map.address}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--- End Locations Section-->
+
+
+        <!--- Start Scoreboard Section -->
+        <div id="scoreboard" class="offset" v-if="page == 'scoreboard'">
+            <div class="offset_1pg"> </div>
+            <div class="container-fluid padding">
+
+
+                <h3 class="heading">Schedule</h3>
+                <div class="heading-underline"></div>
+
+
+                <div class="row narrow">
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" v-for="one in scoreboardArray">
+                        <div class="card text-center bg-dark">
+                            <div class="row scoreboard-card">
+                                <div class="col-6"><img class="card-img-top" v-bind:src="one.icon" alt="Team Logo"></div>
+                                <div class="col-6 text-white">
+                                    <h2>{{one.name}}</h2>
+                                    <h3>SCORE: {{one.score}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--- End Scoreboard Section -->
+
+
+        <!--- Start Chat Section -->
+        <div id="chat" class="offset" v-if="page == 'chat'">
+            <div class="offset_1pg"> </div>
+            <div class="jumbotron">
+
+                <h3 class="heading">Chat</h3>
+                <div class="chat-underline"></div>
+
+
+                <div class="row narrow justify-content-center">
+
+
+                    <div class="container-fluid chat_invisible" v-if="login === false">
+
+                        <span>
+                            <button id="login_btn" type="button" class="btn btn-dark" @click="loginBtn">LOGIN</button>
+                        </span>
+                        <h5>Please login to access chat</h5>
+
+
+
+                    </div>
+
+
+
+                    <div class="chat_visible" v-else="login === true">
+                        <div class="container-fluid">
+                            <div id="messages">
+                                <template v-for="post in posts">
+
+                                    <div v-bind:class="post.msg">
+                                        <img v-bind:src="post.photo" class="post_photo">
+                                        <p class="post_name">{{post.name}}</p>
+                                        <p class="post_date">{{post.date}}</p>
+                                        <p class="post_body">{{post.body}}</p>
+                                    </div>
+
+
+                                </template>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid chat_text">
+
+                            <input id="textInput" class="input" type="text" v-model="value" placeholder="Your message..." v-on:keyup.enter='writeNewPost(value)'>
+
+                        </div>
+
+                        <div class="container-fluid chat_buttons">
+
+                            <button id="logout_btn" type="button" class="btn btn-light" @click="logoutBtn">Logout</button>
+
+                            <button id="sendPost" type="button" class="btn btn-dark" @click="writeNewPost(value)">Send</button>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--- End Chat Section -->
+        
+        
+        
+        
+        
+    </div>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAzrqidAMIubVso8OH7lpqSzE1xlhWsPYk",
+            authDomain: "nysl-web-app-socrates.firebaseapp.com",
+            databaseURL: "https://nysl-web-app-socrates.firebaseio.com",
+            projectId: "nysl-web-app-socrates",
+            storageBucket: "nysl-web-app-socrates.appspot.com",
+            messagingSenderId: "478082954297"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+    <!--- Script Source Files for Bootstrap & Vue JS and Style-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/validator.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <!--- End of Script Source Files -->
+
+
+
+</body>
+
+</html>

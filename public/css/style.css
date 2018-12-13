@@ -1,0 +1,379 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+
+body {
+	overflow-x: hidden;
+	font-family: 'Lato', 'sans-serif';
+	color: #505962;
+}
+
+/*--- Nav Scrolling Offset --*/
+.offset:before {
+	height: 62px;
+	margin-top: -62px;
+	content: "";
+	display: block;
+}
+
+/*--- Extra Bootstrap Column Padding --*/
+[class*="col-"] {
+	padding: 1rem;
+}
+
+/*========== NAVIGATION ===========*/
+
+.navbar {
+	padding: .6rem 1rem;
+	text-transform: uppercase;
+	font-size: .9rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	background-color: rgba(57, 63, 70, .9);
+}
+.navbar-brand img {
+	height: 3.4rem;
+}
+.navbar-nav .nav-link {
+	color: white;
+	padding-top: .8rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+	color: #01b159;
+}
+.svg-inline--fa.fa-w-14 {
+	color: #fff;
+	font-size: 1.6rem;
+}
+.navbar-nav li {
+	padding-right: .8rem;
+}
+
+/*============= LANDING PAGE =============*/
+
+.home-inner {
+    background-color: #406940;
+}
+.caption {
+	width: 100%;
+	max-width: 100%;
+	position: absolute;
+	top: 20%;
+	z-index: 1;
+}
+.caption h3 {
+	color: white;
+	font-size: 2.2rem;
+	text-transform: uppercase;
+	padding-bottom: 5rem;
+}
+.btn {
+	border-radius: 0;
+	padding: .5rem 1.5rem;
+	font-size: .9rem;
+	text-transform: uppercase;
+}
+
+.caption img {
+    height: 7rem;
+    margin: 0.5rem 0.5rem;
+}
+
+
+/*============= TEAMS =============*/
+
+.jumbotron {
+	margin-bottom: 0;
+	border-radius: 0;
+	padding: 3rem 0 3rem;
+}
+.narrow {
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 1rem;
+}
+
+h3.heading {
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 1.9rem;
+}
+.heading-underline {
+	width: 3rem;
+	height: .2rem;
+	background-color: #01b159;
+	margin: 0 auto 2rem;
+}
+.about h3 {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	padding-bottom: .4rem;
+}
+.about p {
+	font-size: 0.9rem;
+}
+
+.jumbotron img {
+    width: 80%;
+}
+
+/*============= SCHEDULE =============*/
+
+.padding {
+	padding: 2rem 0;
+}
+.no-padding [class*=col-] {
+	padding: 0;
+}
+
+
+/*============= EXTRA BITS =============*/
+
+iframe{
+    width:100%;
+    min-height: 350px;
+}
+
+.locations button {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0;
+    
+}
+.filter-schedule{
+    margin: 0 1;
+    padding:0;
+}
+
+.filter-schedule button {
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem;
+    border-radius: 0;
+    text-align: right;
+
+}
+.offset_1pg {
+    height: 63px;
+}
+
+.about img{
+    margin: 0 auto;
+}
+
+.about button{
+    margin: 0.2rem;
+    border-radius: 1rem;
+    font-size: 60%;
+}
+.scoreboard-card [class*="h"]{
+  margin-top: 1.1rem;
+}
+.heading button {
+    border: none;
+    font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 1.9rem;
+}
+.modal-header button {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
+
+/*============= MEDIA QUERIES =============*/
+
+
+
+@media screen and (min-width: 992px) {
+  
+.home-inner {
+	background-image: linear-gradient(to bottom right,rgba(61, 136, 99, 0.5),rgba(40, 72, 45, 0.5)), url('../img/landing.jpg');;
+}  
+    
+.caption img {
+    height: 12rem;
+    margin: 0.5rem 0.5rem;
+}
+    
+.caption h3 {
+	color: white;
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	padding-bottom: 5rem;
+} 
+    
+    
+}
+
+
+@media (max-width: 768px) {
+	.caption {
+		top: 22%;
+	}
+	.caption h3 {
+		font-size: 1.2rem;
+		padding-bottom: 1.2rem;
+	}
+    
+.jumbotron img {
+    width: 40%;
+}
+
+    
+}
+
+/*============= CHAT =============*/
+
+
+
+#messages{
+    overflow-y: scroll;
+    height: 420px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background:#fff;
+}
+
+.msg_right{
+    background:#01b159;
+    padding:10px;
+    text-align:right;
+    color:#fff;
+    margin:5px;
+    width:70%;
+    float:right;
+    margin-right: 30px;
+}
+
+.msg_left{
+    background:#ddd;
+    padding:10px;
+    margin:5px;
+    width:70%;
+    float:left;
+    margin-left: 30px;
+}
+.msg_left:before {
+    width: 0;
+    height: 0;
+    content: "";
+    top: 8px;
+    left: -28px;
+    position: relative;
+    border-style: solid;
+    border-width: 20px 0px 0px 20px;
+    border-color: #ddd transparent transparent transparent;
+   
+}
+.msg_right:after {
+    width: 0;
+    height: 0;
+    content: "";
+    top: 9px;
+    left: 29px;
+    position: relative;
+    border-style: solid;
+    border-width: 20px 20px 00px 0px;
+    border-color: #01b159 transparent transparent transparent;
+}
+
+
+#textInput {
+    width: 100%;
+    height: 2.8rem;
+    margin-bottom: 5px;
+}
+
+.chat_buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat_buttons button {
+    padding: 3px;
+    margin: 0px;
+    font-size: 80%;
+}
+
+#sendPost{
+    background-color:#01b159;
+    color: #fff;
+    border: none;
+}
+
+.chat-underline {
+	width: 3rem;
+	height: .2rem;
+	background-color: #01b159;
+	margin: 0 auto;
+}
+
+.chat_invisible{
+    text-align: center;
+    height: 600px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background:none;
+}
+
+#login_btn{
+    margin: 0 auto;
+    background-color:#01b159;
+    color: #fff;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.msg_right .post_name {
+    margin: 0px;
+    text-transform: capitalize;
+    font-size: 70%;
+    color: #fff;
+
+}
+
+.msg_left .post_name {
+    text-transform: capitalize;
+    font-size: 70%;
+}
+
+.post_body {
+    margin: 0px;
+    font-size: 85%;
+    text-align: left;
+}
+
+.post_date{
+    font-size: 60%;
+    color: #525151;
+}
+
+.post_photo{
+    max-height: 30px;
+    max-width: 30px;
+}

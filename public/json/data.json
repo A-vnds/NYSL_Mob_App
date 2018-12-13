@@ -1,0 +1,309 @@
+{
+    "schedule": [
+
+        {
+            "id": "game1",
+            "host": "U1",
+            "guest": "U4",
+            "location": "AJ Katzenmaier",
+            "time": "09:30",
+            "date": "1",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-01T09:30",
+    },
+
+        {
+            "id": "game2",
+            "host": "U3",
+            "guest": "U2",
+            "location": "Greenbay",
+            "time": "13:00",
+            "date": "1",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-01T13:00",
+    },
+
+        {
+            id: "game3",
+            "host": "U5",
+            "guest": "U6",
+            "location": "Howard A Yeager",
+            "time": "09:30",
+            "date": "8",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-08T09:30",
+    },
+
+        {
+            "id": "game4",
+            "host": "U6",
+            "guest": "U1",
+            "location": "Marjorie P Hart",
+            "time": "13:00",
+            "date": "8",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-08T13:00",
+    },
+
+        {
+            "id": "game5",
+            "host": "U2",
+            "guest": "U4",
+            "location": "North",
+            "time": "09:30",
+            "date": "15",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-15T09:30",
+    },
+
+        {
+            "id": "game6",
+            "host": "U3",
+            "guest": "U5",
+            "location": "AJ Katzenmaier",
+            "time": "13:00",
+            "date": "15",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-15T13:00",
+    },
+
+        {
+            "id": "game7",
+            "host": "U1",
+            "guest": "U3",
+            "location": "South",
+            "time": "09:30",
+            "date": "22",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-22T09:30",
+    },
+
+        {
+            "id": "game8",
+            "host": "U2",
+            "guest": "U6",
+            "location": "Howard A Yeager",
+            "time": "13:00",
+            "date": "22",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-22T13:00",
+    },
+
+        {
+            "id": "game9",
+            "host": "U4",
+            "guest": "U5",
+            "location": "Greenbay",
+            "time": "09:30",
+            "date": "29",
+            "month": "September",
+            "year": "2019",
+            "timeJS": "2019-09-29T09:30",
+    },
+
+        {
+            "id": "game10",
+            "host": "U2",
+            "guest": "U5",
+            "location": "Marjorie P Hart",
+            "time": "09:30",
+            "date": "06",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-06T09:30",
+    },
+
+        {
+            "id": "game11",
+            "host": "U1",
+            "guest": "U6",
+            "location": "South",
+            "time": "13:00",
+            "date": "06",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-06T13:00",
+    },
+
+        {
+            "id": "game12",
+            "host": "U3",
+            "guest": "U4",
+            "location": "Howard A Yeager",
+            "time": "09:30",
+            "date": "08",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-08T09:30",
+    },
+
+        {
+            "id": "game13",
+            "host": "U5",
+            "guest": "U1",
+            "location": "Howard A Yeager",
+            "time": "13:00",
+            "date": "08",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-08T13:00",
+    },
+
+        {
+            "id": "game14",
+            "host": "U6",
+            "guest": "U3",
+            "location": "North",
+            "time": "09:30",
+            "date": "20",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-20T09:30",
+    },
+
+        {
+            "id": "game15",
+            "host": "U2",
+            "guest": "U4",
+            "location": "Marjorie P Hart",
+            "time": "13:00",
+            "date": "20",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-20T13:00",
+    },
+
+        {
+            "id": "game16",
+            "host": "U3",
+            "guest": "U1",
+            "location": "AJ Katzenmaier",
+            "time": "09:30",
+            "date": "27",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-27T09:30",
+    },
+
+        {
+            "id": "game17",
+            "host": "U5",
+            "guest": "U6",
+            "location": "Howard A Yeager",
+            "time": "13:00",
+            "date": "27",
+            "month": "October",
+            "year": "2019",
+            "timeJS": "2019-10-27T13:00",
+    },
+
+],
+    "teams": {
+        "U1": {
+            "name": "U1",
+            "icon": "pictures/U1.png",
+            "wins": "4",
+            "ties": "0",
+            "loses": "1",
+            "score": "13",
+        },
+        "U2": {
+            "name": "U2",
+            "icon": "pictures/U2.png",
+            "wins": "0",
+            "ties": "1",
+            "loses": "3",
+            "score": "2",
+        },
+        "U3": {
+            "name": "U3",
+            "icon": "pictures/U3.png",
+            "wins": "2",
+            "ties": "2",
+            "loses": "1",
+            "score": "9",
+        },
+        "U4": {
+            "name": "U4",
+            "icon": "pictures/U4.png",
+            "wins": "3",
+            "ties": "1",
+            "loses": "3",
+            "score": "7",
+        },
+        "U5": {
+            "name": "U5",
+            "icon": "pictures/U5.png",
+            "wins": "4",
+            "ties": "0",
+            "loses": "1",
+            "score": "11",
+           
+        },
+        "U6": {
+            "name": "U6",
+            "icon": "pictures/U6.png",
+            "wins": "1",
+            "ties": "3",
+            "loses": "0",
+            "score": "6",
+        }
+    },
+
+
+    "maps": {
+
+
+        "AJ_Katzenmaier": {
+            "id": "elem1",
+            "name": "AJ Katzenmaier",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654213562159!2d-87.63124374915907!3d41.9002930791185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+USA!5e0!3m2!1sen!2snl!4v1539857512979",
+            "address": "24 W. Walton St., Chicago, IL 60610",
+        },
+
+        "Greenbay": {
+            "id": "elem2",
+            "name": "Greenbay",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258285528253!2d-87.64003404915863!3d41.913803479117306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858116679",
+            "address": "1734 N. Orleans St., Chicago, IL 60614",
+        },
+
+        "Howard_A_Yeager": {
+            "id": "elem3",
+            "name": "Howard A. Yeager",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830903626!2d-87.66511994915827!3d41.92326457911668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858149152",
+            "address": "2245 N. Southport Ave., Chicago, IL 60614",
+        },
+
+        "Marjorie_P_Hart": {
+            "id": "elem4",
+            "name": "Marjorie P. Hart",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.291821600013!2d-87.64809034915805!3d41.929580279116124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858203584",
+            "address": "2625 N. Orchard St., Chicago, IL 60614",
+
+        },
+
+        "North": {
+            "id": "elem5",
+            "name": "North",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3364882363303!2d-87.64836124915884!3d41.90712467911788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+USA!5e0!3m2!1sen!2snl!4v1539858228771",
+            "address": "1409 N. Ogden Ave., Chicago, IL 60610",
+        },
+
+        "South": {
+            "id": "elem6",
+            "name": "South",
+            "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.748020313892!2d-87.65356324915841!3d41.91977527911686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+USA!5e0!3m2!1sen!2snl!4v1539858259828",
+            "address": "2101 N. Fremont St., Chicago, IL 60614",
+        },
+    },
+
+}
