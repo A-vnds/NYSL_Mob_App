@@ -15,11 +15,12 @@
 </head>
 
 
-<body data-spy="scroll" data-target="#navbarResponsive">
+<!--<body data-spy="scroll" data-target="#navbarResponsive">-->
+   <body>
     <div id="vue-app">
 
         <!--- Start Nav Page -->
-        <div id="home">
+        <div>
 
             <nav class="navbar navbar-expand-md fixed-top">
                 <div class="container-fluid">
@@ -448,10 +449,22 @@
 
 
                     </div>
+                    
+                    
+                    
 
 
 
                     <div class="chat_visible" v-else="login === true">
+                       
+                       <div id="show_5seconds">
+                       
+                       <div class="lds-grid" id="#loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                       
+                       </div>
+                       
+                       <div id="hide_5seconds">
+                       
                         <div class="container-fluid">
                             <div id="messages">
                                 <template v-for="post in posts">
@@ -481,6 +494,10 @@
                             <button id="sendPost" type="button" class="btn btn-dark" @click="writeNewPost(value)">Send</button>
 
                         </div>
+                        
+                        
+                        </div>
+                        
                     </div>
 
 

@@ -66,6 +66,7 @@ var app = new Vue({
         showPage: function (value) {
             this.page = value;
         },
+        
 
         scoreboardObject: function () {
             for (key in this.teams) {
@@ -104,6 +105,7 @@ var app = new Vue({
                 .then(function () {
                     app.login = true;
                     app.getPosts();
+                
                 })
                 .catch(function () {
                     alert("Something went wrong");
@@ -169,20 +171,31 @@ var app = new Vue({
                         msg: message});
                     
                 }
-               
+                
+            
+                
                 app.posts = array;
-                setTimeout(app.scrollDown, 500);
+                
+                setTimeout(function () {
+                    document.getElementById("show_5seconds").style.display = "none";
+                }, 2000);
+                
+                setTimeout(function () {
+                    document.getElementById("hide_5seconds").style.display = "block";
+                }, 2000)
+                 setTimeout(app.scrollDown, 2000);
+                ;
+                
+                
+                setTimeout(app.scrollDown, 300);
             });
 
         },
 
         scrollDown() {
             let element = document.getElementById("messages");
-            
-            element.scrollTop = element.scrollHeight;
-       
-//            element.scroll({top: element.schrollHeight, left: 0, behavior: 'smooth' })
-////            element.scroll({ top: 2500, left: 0, behavior: 'smooth' });
+                   
+            element.scroll({top: element.scrollHeight, left: 0, behavior: 'smooth' })
         },
         
         
@@ -214,7 +227,7 @@ var app = new Vue({
             
             },
         
-        
+
 
 
 },
@@ -223,13 +236,4 @@ var app = new Vue({
 
 
 
-$(document).ready(function () {
-    $("html, body").animate({
-        scrollTop: $("#messages").offset().top
-    }, 500);
-});
 
-
-//$('html, body').animate({
-//        scrollTop: $(hash).offset().top
-//      }, 800, function(){
