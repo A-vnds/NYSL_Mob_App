@@ -46,7 +46,7 @@ var app = new Vue({
 
         displayMap(value) {
 
-            if (this.mapDisplayed !== value) {
+            if (this.mapDisplayed != value) {
                 this.mapDisplayed = value;
             } else {
                 this.mapDisplayed = "";
